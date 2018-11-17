@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -163,44 +160,40 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpu-py-Mc1" customClass="MainBorderView" customModule="MusicApp" customModuleProvider="target">
-                                <rect key="frame" x="150" y="602" width="75" height="75"/>
+                                <rect key="frame" x="0.0" y="613" width="375" height="64"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Qpu-py-Mc1" secondAttribute="height" id="MGf-JZ-Xpd"/>
+                                    <constraint firstAttribute="height" constant="64" id="7P0-Wp-llZ"/>
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4q-Tg-fKq" customClass="MainImageView" customModule="MusicApp" customModuleProvider="target">
-                                <rect key="frame" x="161" y="613.5" width="52.5" height="52.5"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="64"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5N-w6-scE" customClass="AnimatedCircleImageView" customModule="MusicApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-0.5" width="52.5" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_image_view" translatesAutoresizingMaskIntoConstraints="NO" id="6Tv-p5-68I">
-                                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="52.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="6Tv-p5-68I" firstAttribute="top" secondItem="C5N-w6-scE" secondAttribute="top" id="2qc-5u-ign"/>
                                             <constraint firstAttribute="trailing" secondItem="6Tv-p5-68I" secondAttribute="trailing" id="CB3-Gl-mSw"/>
-                                            <constraint firstAttribute="width" secondItem="C5N-w6-scE" secondAttribute="height" id="EKP-t7-75n"/>
-                                            <constraint firstAttribute="bottom" secondItem="6Tv-p5-68I" secondAttribute="bottom" id="ni6-jh-v6y"/>
-                                            <constraint firstItem="6Tv-p5-68I" firstAttribute="top" secondItem="C5N-w6-scE" secondAttribute="top" id="oQR-by-kVs"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Tv-p5-68I" secondAttribute="bottom" id="xVO-os-iwC"/>
                                             <constraint firstItem="6Tv-p5-68I" firstAttribute="leading" secondItem="C5N-w6-scE" secondAttribute="leading" id="yFQ-nE-jZl"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="6Tv-p5-68I" id="kQF-0R-tpx"/>
                                         </connections>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_button" translatesAutoresizingMaskIntoConstraints="NO" id="rdf-Tr-1Jh">
-                                        <rect key="frame" x="14" y="13.5" width="26" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="rdf-Tr-1Jh" secondAttribute="height" id="2uy-PT-nFn"/>
-                                        </constraints>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_button" translatesAutoresizingMaskIntoConstraints="NO" id="rdf-Tr-1Jh">
+                                        <rect key="frame" x="0.0" y="-10" width="375" height="84"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="c4q-Tg-fKq" secondAttribute="height" id="Pti-id-BgP"/>
-                                    <constraint firstItem="rdf-Tr-1Jh" firstAttribute="width" secondItem="c4q-Tg-fKq" secondAttribute="width" multiplier="1:2" id="S3O-kQ-OLV"/>
+                                    <constraint firstItem="rdf-Tr-1Jh" firstAttribute="width" secondItem="c4q-Tg-fKq" secondAttribute="width" id="S3O-kQ-OLV"/>
                                     <constraint firstItem="rdf-Tr-1Jh" firstAttribute="centerY" secondItem="c4q-Tg-fKq" secondAttribute="centerY" id="TXh-dw-WXz"/>
+                                    <constraint firstItem="C5N-w6-scE" firstAttribute="height" secondItem="c4q-Tg-fKq" secondAttribute="height" id="Uq1-aR-9q9"/>
                                     <constraint firstItem="C5N-w6-scE" firstAttribute="centerY" secondItem="c4q-Tg-fKq" secondAttribute="centerY" id="Vlj-8j-R8C"/>
                                     <constraint firstItem="C5N-w6-scE" firstAttribute="centerX" secondItem="c4q-Tg-fKq" secondAttribute="centerX" id="fln-gA-xBA"/>
                                     <constraint firstItem="rdf-Tr-1Jh" firstAttribute="centerX" secondItem="c4q-Tg-fKq" secondAttribute="centerX" id="psE-AN-zFP"/>
@@ -214,10 +207,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qpu-py-Mc1" firstAttribute="width" secondItem="5Dd-HI-m9K" secondAttribute="width" multiplier="1:5" id="6RN-uM-7Qn"/>
+                            <constraint firstItem="Qpu-py-Mc1" firstAttribute="width" secondItem="5Dd-HI-m9K" secondAttribute="width" id="6RN-uM-7Qn"/>
                             <constraint firstItem="c4q-Tg-fKq" firstAttribute="centerX" secondItem="5Dd-HI-m9K" secondAttribute="centerX" id="BoT-6R-EZy"/>
                             <constraint firstAttribute="bottom" secondItem="6Pv-hJ-xpw" secondAttribute="bottom" id="DJX-wA-fIm"/>
-                            <constraint firstItem="c4q-Tg-fKq" firstAttribute="width" secondItem="Qpu-py-Mc1" secondAttribute="width" multiplier="7:10" id="Hdb-72-uef"/>
+                            <constraint firstItem="c4q-Tg-fKq" firstAttribute="width" secondItem="Qpu-py-Mc1" secondAttribute="width" id="Hdb-72-uef"/>
                             <constraint firstItem="6Pv-hJ-xpw" firstAttribute="leading" secondItem="5Dd-HI-m9K" secondAttribute="leading" id="Iyz-1p-ROE"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Qpu-py-Mc1" secondAttribute="bottom" constant="-10" id="Ocz-fD-h17"/>
                             <constraint firstItem="bQW-wa-eIs" firstAttribute="leading" secondItem="5Dd-HI-m9K" secondAttribute="leading" id="P6L-Tf-Hkj"/>
@@ -227,6 +220,7 @@
                             <constraint firstItem="Qpu-py-Mc1" firstAttribute="centerX" secondItem="5Dd-HI-m9K" secondAttribute="centerX" id="cbw-ly-sbs"/>
                             <constraint firstAttribute="bottom" secondItem="bQW-wa-eIs" secondAttribute="bottom" id="qTq-af-CCV"/>
                             <constraint firstAttribute="trailing" secondItem="6Pv-hJ-xpw" secondAttribute="trailing" id="s23-DB-sdT"/>
+                            <constraint firstItem="c4q-Tg-fKq" firstAttribute="height" secondItem="Qpu-py-Mc1" secondAttribute="height" id="yP4-07-lDQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -242,9 +236,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="main_image_view" width="150" height="150"/>
-        <image name="music" width="25" height="25"/>
-        <image name="online" width="26" height="26"/>
-        <image name="play_button" width="34" height="42"/>
+        <image name="main_image_view" width="300" height="300"/>
+        <image name="music" width="50" height="50"/>
+        <image name="online" width="52" height="52"/>
+        <image name="play_button" width="69" height="84"/>
     </resources>
 </document>

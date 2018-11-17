@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +32,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feR-Vu-LjM" customClass="GADBannerView">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feR-Vu-LjM" customClass="GADBannerView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 </view>
                                             </subviews>
@@ -569,10 +567,10 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFT-ZQ-gM7">
-                                                                                        <rect key="frame" x="0.0" y="93.5" width="250" height="31.5"/>
+                                                                                        <rect key="frame" x="0.0" y="94" width="250" height="31"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2C-rD-BDD">
-                                                                                                <rect key="frame" x="4" y="0.0" width="242" height="31.5"/>
+                                                                                                <rect key="frame" x="4" y="0.0" width="242" height="31"/>
                                                                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -587,7 +585,7 @@
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oq6-TG-7vj">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="93.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="94"/>
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <constraints>
@@ -660,7 +658,7 @@
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZU-Qd-Dxg">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chf-Ag-AXK">
                                                                                         <rect key="frame" x="4" y="2" width="281.5" height="20.5"/>
@@ -669,20 +667,20 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Singer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuz-Lg-ELh">
-                                                                                        <rect key="frame" x="4" y="24.5" width="187.5" height="16.5"/>
+                                                                                        <rect key="frame" x="4" y="24.5" width="187.5" height="16"/>
                                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                                                         <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-JO-xlr">
-                                                                                        <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                                                                                        <rect key="frame" x="0.0" y="42.5" width="375" height="1"/>
                                                                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="1" id="KVw-gw-XyX"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ3-y7-Cdv">
-                                                                                        <rect key="frame" x="341.5" y="9" width="25.5" height="26"/>
+                                                                                        <rect key="frame" x="341" y="8.5" width="26" height="26.5"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="BQ3-y7-Cdv" secondAttribute="height" multiplier="1:1" id="ESN-Mm-t7M"/>
                                                                                         </constraints>
@@ -767,6 +765,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="song_more" width="80" height="80"/>
+        <image name="song_more" width="160" height="160"/>
     </resources>
 </document>

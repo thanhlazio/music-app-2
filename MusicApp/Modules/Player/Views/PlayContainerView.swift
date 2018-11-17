@@ -11,8 +11,6 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 
-
-
 class PlayContainerView: UIScrollView {
 
     @IBOutlet weak var listView: UIView!
@@ -112,6 +110,19 @@ class PlayContainerView: UIScrollView {
         self.rx.didEndDecelerating
             .map { [weak self] _ in self?.contentOffset.x ?? 0 }
             .subscribe(onNext: { [weak self] offset in
+                
+                if offset >= width * 2 {
+                    self?.position = .lyric
+                    pageControl.currentPage = 2
+                } else if offset >= width {
+                    self?.position = .information
+                    pageControl.currentPage = 1
+                } else if offset >= 0 {
+                    self?.position = .list
+                    pageControl.currentPage = 0
+                }
+                
+                /*
                 if equal(offset, to: 0, inTolerance: 0.2) {
                     self?.position = .list
                     pageControl.currentPage = 0
@@ -123,7 +134,7 @@ class PlayContainerView: UIScrollView {
                 if equal(offset, to: width * 2, inTolerance: 0.2) {
                     self?.position = .lyric
                     pageControl.currentPage = 2
-                }
+                }*/
             })
             .addDisposableTo(rx_disposeBag)
     }

@@ -14,6 +14,7 @@ class LoadingActivityIndicatorView: UIView {
     // MARK: Configuration
     
     fileprivate var indicatorView: NVActivityIndicatorView!
+    fileprivate var logoImageView: UIImageView!
     
     fileprivate(set) weak var sourceView: UIView?
     fileprivate var shadowView: UIView?
@@ -30,11 +31,27 @@ class LoadingActivityIndicatorView: UIView {
     
     private func configure() {
         self.layer.cornerRadius = 12
-        self.backgroundColor = UIColor(withIntWhite: 128)
+        self.backgroundColor = .clear
+        
+        logoImageView = UIImageView()
+        logoImageView.image = UIImage(named: "main_image")
+        logoImageView.contentMode = .scaleToFill
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.shadowed()
+        addSubview(logoImageView)
+        
+        NSLayoutConstraint.activate([
+            logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            logoImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            logoImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.62),
+            logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor)
+            ])
+        logoImageView.layer.cornerRadius = min(logoImageView.frame.width, logoImageView.frame.height) / 2
+        logoImageView.layer.masksToBounds = false
         
         indicatorView = NVActivityIndicatorView(
             frame: .zero,
-            type: .ballSpinFadeLoader,
+            type: .circleStrokeSpin,
             color: .background,
             padding: nil
         )
@@ -45,7 +62,7 @@ class LoadingActivityIndicatorView: UIView {
         NSLayoutConstraint.activate([
             indicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicatorView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            indicatorView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4),
+            indicatorView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
             indicatorView.widthAnchor.constraint(equalTo: indicatorView.heightAnchor)
         ])
     }
@@ -137,7 +154,7 @@ extension LoadingActivityIndicatorView {
         NSLayoutConstraint.activate([
             centerXAnchor.constraint(equalTo: shadowView.centerXAnchor),
             centerYAnchor.constraint(equalTo: shadowView.centerYAnchor),
-            widthAnchor.constraint(equalTo: shadowView.widthAnchor, multiplier: 0.2),
+            widthAnchor.constraint(equalTo: shadowView.widthAnchor, multiplier: 0.25),
             widthAnchor.constraint(equalTo: heightAnchor)
         ])
         

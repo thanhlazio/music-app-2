@@ -43,8 +43,8 @@ enum API {
 
 extension API {
     
-//    var baseURL: String { return "https://music-api-kp.herokuapp.com" }
-    var baseURL: String { return "http://192.168.1.103:3000" }
+    var baseURL: String { return "https://music-api-kp.herokuapp.com" }
+//    var baseURL: String { return "http://192.168.1.103:3000" }
     
     var url: String { return baseURL + path }
     
@@ -104,6 +104,7 @@ extension API {
 extension API {
     
     func json() -> Observable<[String:Any]> {
+        print("--------------------------------------\nfetch url \(self.url)")
         return RxAlamofire.json(.get, self.url)
             .map { json in
                 guard let data = (json as? [String:Any])?["data"] as? [String:Any] else {

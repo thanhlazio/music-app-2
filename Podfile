@@ -33,7 +33,7 @@ target 'MusicApp' do
   pod 'XLPagerTabStrip', '~> 7.0'
   
   # NVActivityIndicatorView
-  pod 'NVActivityIndicatorView'
+  pod 'NVActivityIndicatorView', '~> 4.4.0'
   
   # TwicketSegmentedControl
   pod 'TwicketSegmentedControl'

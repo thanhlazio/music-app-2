@@ -11,7 +11,8 @@ import UIKit
 class PlayerDismissInteractiveController: NSObject, UIViewControllerInteractiveTransitioning, PlayerAnimationOptions {
     
     // MARK: Properties
-    
+    var panGesture: UIPanGestureRecognizer!
+    var interactiveFrame: CGRect?
     var interactionInProgress = false
     fileprivate var shouldCompleteTransition = false
     
@@ -48,7 +49,7 @@ class PlayerDismissInteractiveController: NSObject, UIViewControllerInteractiveT
     }
     
     private func preparePanGestureRecoginzer(in view: UIView) {
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerDidReceive(_:)))
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerDidReceive(_:)))
         view.addGestureRecognizer(panGesture)
     }
     
@@ -59,6 +60,15 @@ class PlayerDismissInteractiveController: NSObject, UIViewControllerInteractiveT
 extension PlayerDismissInteractiveController {
     
     func panGestureRecognizerDidReceive(_ panGesture: UIPanGestureRecognizer) {
+        let location = panGesture.location(in: panGesture.view)
+        
+        if interactiveFrame?.contains(location) == false {
+            self.panGesture?.isEnabled = false
+            self.panGesture?.cancelsTouchesInView = true
+            self.panGesture?.isEnabled = true
+            return
+        }
+        
         switch panGesture.state {
         case .began:
             onBegan(panGesture)

@@ -41,3 +41,22 @@ extension UIView {
         self.frame = frame
     }
 }
+
+extension UIView {
+    func shadowed(radius: CGFloat = 5.0, opacity: Float = 0.5, color: UIColor = .black, offset: CGSize = .zero) {
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+        layer.shadowColor = color.cgColor
+        layer.shadowOffset = offset
+        layer.masksToBounds = false
+    }
+}
+
+
+extension UITableView {
+    func scrollToBottom(animated: Bool) {
+        let y = contentSize.height - frame.size.height
+        setContentOffset(CGPoint(x: 0, y: (y<0) ? 0 : y), animated: animated)
+    }
+    
+}

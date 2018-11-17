@@ -17,8 +17,8 @@ class MainImageView: UIView {
     @IBOutlet weak var iconView: UIImageView!
     
     func configure(store: MainStore, action: MainAction, center: CGPoint) {
-        layer.cornerRadius = bounds.size.width / 2
-        layer.borderWidth = 2
+//        layer.cornerRadius = bounds.height / 2
+        layer.borderWidth = 0.7
         layer.borderColor = UIColor.main.cgColor
         
         iconView.image = iconView.image?.withRenderingMode(.alwaysTemplate)

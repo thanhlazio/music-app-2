@@ -20,7 +20,8 @@ class AnimatedCircleImageView: UIView {
     }
     
     func configure() {
-        imageView.layer.cornerRadius = imageView.frame.width / 2
+//        imageView.layer.cornerRadius = min(imageView.frame.width, imageView.frame.height) / 2
+        imageView.clipsToBounds = true
     }
     
     // MARK: Animation
@@ -35,7 +36,7 @@ class AnimatedCircleImageView: UIView {
     
     func startAnimating() {
         isRotating = true
-        animate()
+//        animate()
     }
     
     func stopAnimating() {

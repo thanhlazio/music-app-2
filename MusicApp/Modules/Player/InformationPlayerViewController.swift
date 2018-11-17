@@ -26,8 +26,63 @@ class InformationPlayerViewController: UIViewController {
         
         bindStore()
         bindAction()
+        customScrollView()
     }
+    
+    fileprivate func customScrollView() {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.isPagingEnabled = true
+        scrollView.delegate = self
+        let scrollSize = view.bounds
+        let customHeight = scrollSize.width + 80
+        scrollView.frame = CGRect(x: 0,
+                                  y: (view.frame.height - customHeight) / 2 - 80,
+                                  width: scrollSize.width,
+                                  height: customHeight)
+        scrollView.contentInset = UIEdgeInsets.zero
+        
+        let views = (1...10).map { (_) -> UIView in
+            let view = UIView()
+            view.backgroundColor = UIColor(hue: .random(in: 0...1), saturation: .random(in: 0...1), brightness: .random(in: 0.4...0.7), alpha: 1)
+            view.alpha = 0.85
+            return view
+        }
+        
+        for (index, view) in views.enumerated() {
+            view.frame = CGRect(x: CGFloat(index) * scrollSize.width,
+                                y: 0,
+                                width: scrollSize.width,
+                                height: customHeight)
+            scrollView.addSubview(view)
+        }
+        
+        scrollView.contentSize = CGSize(width: scrollSize.width * CGFloat(views.count), height: customHeight)
+        view.addSubview(scrollView)
+    }
+    
+    var currentOffset: CGPoint!
+    var currentPage: Int?
+}
 
+extension InformationPlayerViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        currentOffset = scrollView.contentOffset
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let page = currentPage {
+            print("page \(page)")
+        }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(floor(targetContentOffset.pointee.x / scrollView.frame.width))
+        if floor(targetContentOffset.pointee.x) != currentOffset.x {
+            currentPage = page
+        }
+    }
 }
 
 // MARK: Store

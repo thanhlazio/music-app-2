@@ -25,7 +25,7 @@ class MAMainStore: MainStore {
     let position = Variable<MainState>(.online)
     
     let image = Variable<String>("")
-    let rotating = Variable<Bool>(false)
+    let rotating = Variable<Bool>(true)
     let iconVisible = Variable<Bool>(true)
     
     let translation = Variable<CGFloat>(0)

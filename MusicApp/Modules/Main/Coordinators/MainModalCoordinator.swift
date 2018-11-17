@@ -34,6 +34,8 @@ class MAMainModalCoordinator: NSObject, MainModalCoordinator, UIViewControllerTr
         
         configurePlayerController(playerController)
         
+        dismissInteractiveController.interactiveFrame = CGRect(
+            x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4 * 3)
         mainController.present(playerController, animated: true) {
             self.dismissInteractiveController.configure(viewController: playerController, presentingController: mainController)
             subject.onCompleted()
@@ -53,6 +55,8 @@ class MAMainModalCoordinator: NSObject, MainModalCoordinator, UIViewControllerTr
         
         configurePlayerController(playerController)
         
+        dismissInteractiveController.interactiveFrame = CGRect(
+            x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4 * 3)
         presentInteractiveController.configure(viewController: playerController, parentViewController: mainController) { [weak self] in
             self?.dismissInteractiveController.configure(
                 viewController: playerController,

@@ -168,7 +168,7 @@ extension MAMusicTrackDataSource {
         
         var track = tracks[0]
         repeat {
-            let randomIndex = Int(arc4random_uniform(UInt32(tracks.count)))
+            let randomIndex = Int(arc4random_uniform(UInt32(tracks.count))) //Int.random(in: 0..<tracks.count)
             track = tracks[randomIndex]
         } while (track == currentTrack || loadedTracks.contains(track))
         
