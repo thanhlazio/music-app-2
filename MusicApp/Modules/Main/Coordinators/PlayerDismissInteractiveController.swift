@@ -20,11 +20,11 @@ class PlayerDismissInteractiveController: NSObject, UIViewControllerInteractiveT
     fileprivate weak var containerView: UIView!
     fileprivate weak var view: UIView!
     
-    fileprivate weak var borderView: UIView!
+//    fileprivate weak var borderView: UIView!
     fileprivate weak var imageView: UIView!
     
     fileprivate lazy var centerBottomDistance: CGFloat = {
-        return self.containerView.frame.height + self.bottomDistance - self.borderView.frame.height / 2
+        return self.containerView.frame.height + self.bottomDistance - self.imageView.frame.height / 2
     }()
     
     fileprivate var transitionContext: UIViewControllerContextTransitioning!
@@ -43,7 +43,7 @@ class PlayerDismissInteractiveController: NSObject, UIViewControllerInteractiveT
         containerView = viewController.view.superview
         
         imageView = presentingController.imageView
-        borderView = presentingController.borderView
+//        borderView = presentingController.borderView
         
         preparePanGestureRecoginzer(in: viewController.view)
     }
@@ -129,14 +129,14 @@ extension PlayerDismissInteractiveController {
         view.alpha = endAlpha - percentComplete * (endAlpha - startAlpha)
         
         if offset < centerBottomDistance {
-            borderView.center.y = offset
-            borderView.alpha = endAlpha - view.alpha
+//            borderView.center.y = offset
+//            borderView.alpha = endAlpha - view.alpha
             
             // imageContainer.center.y = centerBottomDistance + (containerView.frame.height - (offset + (containerView.frame.height - centerBottomDistance)))
             imageView.center.y = centerBottomDistance * 2 - offset
         } else {
-            borderView.center.y = centerBottomDistance
-            borderView.alpha = self.endAlpha
+//            borderView.center.y = centerBottomDistance
+//            borderView.alpha = self.endAlpha
             
             imageView.center.y = centerBottomDistance
         }
@@ -150,8 +150,8 @@ extension PlayerDismissInteractiveController {
                 self.view.frame.origin.y = self.containerView.frame.height
                 self.view.alpha = self.startAlpha
                 
-                self.borderView.center.y = self.centerBottomDistance
-                self.borderView.alpha = self.endAlpha
+//                self.borderView.center.y = self.centerBottomDistance
+//                self.borderView.alpha = self.endAlpha
                 
                 self.imageView.center.y = self.centerBottomDistance
             },
@@ -171,8 +171,8 @@ extension PlayerDismissInteractiveController {
                 self.view.frame.origin.y = 0
                 self.view.alpha = self.endAlpha
                 
-                self.borderView.center.y = 0
-                self.borderView.alpha = self.startAlpha
+//                self.borderView.center.y = 0
+//                self.borderView.alpha = self.startAlpha
                 
                 // offset = 0
                 self.imageView.center.y = self.centerBottomDistance * 2

@@ -19,9 +19,16 @@ class AnimatedCircleImageView: UIView {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+    }
+    
     func configure() {
-//        imageView.layer.cornerRadius = min(imageView.frame.width, imageView.frame.height) / 2
-        imageView.clipsToBounds = true
+//        imageView.clipsToBounds = true
+//        imageView.layer.masksToBounds = true
+//        imageView.shadowed(radius: 2)
+//        imageView.layer.cornerRadius = imageView.frame.width / 2
     }
     
     // MARK: Animation
@@ -36,7 +43,7 @@ class AnimatedCircleImageView: UIView {
     
     func startAnimating() {
         isRotating = true
-//        animate()
+        animate()
     }
     
     func stopAnimating() {

@@ -62,7 +62,7 @@ class LoadingActivityIndicatorView: UIView {
         NSLayoutConstraint.activate([
             indicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicatorView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            indicatorView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
+            indicatorView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57),
             indicatorView.widthAnchor.constraint(equalTo: indicatorView.heightAnchor)
         ])
     }

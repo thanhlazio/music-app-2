@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		139EF8AD21A82A1C0064798D /* MARequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EF8AC21A82A1C0064798D /* MARequest.swift */; };
+		13B49ED721A2C46800505FE3 /* BasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B49ED621A2C46800505FE3 /* BasePageViewController.swift */; };
 		9E0055601EF23DE400CABF65 /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E00555F1EF23DE400CABF65 /* AdvertisementCell.swift */; };
 		9E0055621EF23F2B00CABF65 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0055611EF23F2B00CABF65 /* LoadMoreCell.swift */; };
 		9E0055641EF2533700CABF65 /* SongSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0055631EF2533700CABF65 /* SongSection.swift */; };
@@ -345,6 +347,8 @@
 
 /* Begin PBXFileReference section */
 		09316C93BBDFBACB6F4DBE01 /* Pods_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		139EF8AC21A82A1C0064798D /* MARequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARequest.swift; sourceTree = "<group>"; };
+		13B49ED621A2C46800505FE3 /* BasePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePageViewController.swift; sourceTree = "<group>"; };
 		20F51123458185C794C3CFC2 /* Pods-MusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicApp/Pods-MusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		9E00555F1EF23DE400CABF65 /* AdvertisementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvertisementCell.swift; path = Modules/Online/Views/AdvertisementCell.swift; sourceTree = "<group>"; };
 		9E0055611EF23F2B00CABF65 /* LoadMoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadMoreCell.swift; path = Modules/Online/Views/LoadMoreCell.swift; sourceTree = "<group>"; };
@@ -1173,6 +1177,7 @@
 			children = (
 				9EDAFD5C1EEB0CAB008BA357 /* Extensions */,
 				9EBD619C1EEFCECC00A7CCE0 /* API.swift */,
+				139EF8AC21A82A1C0064798D /* MARequest.swift */,
 				9EE0529D1EEDBB390096ABDE /* UIColor+GlobalConstants.swift */,
 				9EE0529E1EEDBB390096ABDE /* UIFont+Constants.swift */,
 				9EE0529F1EEDBB390096ABDE /* UIStoryboard+Constants.swift */,
@@ -1342,6 +1347,7 @@
 			isa = PBXGroup;
 			children = (
 				9EDAFD061EEAE6B4008BA357 /* PlayerViewController.swift */,
+				13B49ED621A2C46800505FE3 /* BasePageViewController.swift */,
 				9E4DA9F41EFD3C890001A2D4 /* ListPlayerViewController.swift */,
 				9E4DA9F61EFD3CA30001A2D4 /* InformationPlayerViewController.swift */,
 				9E4DA9F81EFD3CB00001A2D4 /* LyricPlayerViewController.swift */,
@@ -1709,12 +1715,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = HungDo;
 				TargetAttributes = {
 					9E7357991EEAC54500E4598E = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = DAB2NZFLN5;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2029,6 +2036,7 @@
 				9E2E85A21EFE26CB00FB9059 /* PlayerStorage.swift in Sources */,
 				9EDAFD661EEB0CBB008BA357 /* UIViewController+Container.swift in Sources */,
 				9E6E88D21EEF17B700F89C95 /* Singer.swift in Sources */,
+				13B49ED721A2C46800505FE3 /* BasePageViewController.swift in Sources */,
 				9E32FAAE1F05066C0026F91E /* TopicRepository.swift in Sources */,
 				9EBD61A91EEFE83500A7CCE0 /* PlaylistInfo.swift in Sources */,
 				9EDAFD841EEB2929008BA357 /* PlayerPresentationController.swift in Sources */,
@@ -2080,6 +2088,7 @@
 				9E25709F1F000C1A00995913 /* LyricCell.swift in Sources */,
 				9E4049671F0611F400667E6E /* RankType.swift in Sources */,
 				9EFED8981F06497E0066F559 /* RankSongRepository.swift in Sources */,
+				139EF8AD21A82A1C0064798D /* MARequest.swift in Sources */,
 				9E32FABC1F051E850026F91E /* TopicDetailService.swift in Sources */,
 				9E6E88AE1EEF140A00F89C95 /* TopicModule.swift in Sources */,
 				9E04CA8E1F090002003AB05C /* VideoMenuView.swift in Sources */,
@@ -2185,15 +2194,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2236,15 +2253,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

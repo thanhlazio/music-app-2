@@ -9,6 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Base Page View Controller-->
+        <scene sceneID="9gm-Sk-LdU">
+            <objects>
+                <pageViewController storyboardIdentifier="BasePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Mwr-Eg-EAk" customClass="BasePageViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j00-ls-yIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1786" y="135"/>
+        </scene>
         <!--Player View Controller-->
         <scene sceneID="jIJ-TP-IRd">
             <objects>
@@ -540,9 +548,9 @@
                             <constraint firstItem="bUs-10-csM" firstAttribute="top" secondItem="uek-uA-z5g" secondAttribute="top" id="kCY-Pg-Yha"/>
                             <constraint firstAttribute="trailing" secondItem="kZo-h7-Lx1" secondAttribute="trailing" id="lRL-dn-lgg"/>
                             <constraint firstItem="uek-uA-z5g" firstAttribute="top" secondItem="Z24-l9-7sO" secondAttribute="bottom" id="lmF-qA-l4z"/>
-                            <constraint firstItem="44I-ej-2xP" firstAttribute="top" secondItem="y9l-xs-YgA" secondAttribute="top" constant="20" id="ntj-wc-p0C"/>
+                            <constraint firstItem="44I-ej-2xP" firstAttribute="top" secondItem="hr4-bE-zSr" secondAttribute="bottom" id="ntj-wc-p0C"/>
                             <constraint firstAttribute="bottom" secondItem="pCY-UC-gAp" secondAttribute="bottom" id="oEW-P9-YL8"/>
-                            <constraint firstItem="tpI-Fd-Uf3" firstAttribute="top" secondItem="y9l-xs-YgA" secondAttribute="top" constant="20" id="oqs-31-Iqe"/>
+                            <constraint firstItem="tpI-Fd-Uf3" firstAttribute="top" secondItem="hr4-bE-zSr" secondAttribute="bottom" id="oqs-31-Iqe"/>
                             <constraint firstAttribute="trailing" secondItem="unz-U2-8U0" secondAttribute="trailing" id="uCa-Bg-s8H"/>
                         </constraints>
                     </view>
@@ -809,24 +817,6 @@
             </objects>
             <point key="canvasLocation" x="-962" y="771"/>
         </scene>
-        <!--Base Page View Controller-->
-        <scene sceneID="hn2-db-VCx">
-            <objects>
-                <viewController storyboardIdentifier="BasePageViewController" id="r73-NA-hVU" customClass="BasePageViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DHL-kN-z66"/>
-                        <viewControllerLayoutGuide type="bottom" id="yGT-sh-i1Y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="i74-dl-DgT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gT4-Ej-Rkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-188" y="916"/>
-        </scene>
         <!--List Player View Controller-->
         <scene sceneID="WOF-aa-9Iv">
             <objects>
@@ -1013,15 +1003,17 @@
                                 <rect key="frame" x="37.5" y="163.5" width="300" height="300"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r23-ot-iP1">
-                                        <rect key="frame" x="5" y="5" width="290" height="290"/>
+                                        <rect key="frame" x="7.5" y="7.5" width="285" height="285"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="r23-ot-iP1" secondAttribute="height" id="ara-Th-KG5"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OT3-d0-Bdh" secondAttribute="height" id="1IZ-v6-LCB"/>
-                                    <constraint firstAttribute="bottom" secondItem="r23-ot-iP1" secondAttribute="bottom" constant="5" id="5DW-Mu-KyJ"/>
-                                    <constraint firstItem="r23-ot-iP1" firstAttribute="top" secondItem="OT3-d0-Bdh" secondAttribute="top" constant="5" id="bre-Nv-VJC"/>
-                                    <constraint firstAttribute="trailing" secondItem="r23-ot-iP1" secondAttribute="trailing" constant="5" id="c0q-39-7oZ"/>
-                                    <constraint firstItem="r23-ot-iP1" firstAttribute="leading" secondItem="OT3-d0-Bdh" secondAttribute="leading" constant="5" id="j6V-Lg-C5N"/>
+                                    <constraint firstItem="r23-ot-iP1" firstAttribute="centerY" secondItem="OT3-d0-Bdh" secondAttribute="centerY" id="4ef-aN-euk"/>
+                                    <constraint firstItem="r23-ot-iP1" firstAttribute="width" secondItem="OT3-d0-Bdh" secondAttribute="width" multiplier="0.95" id="Veg-ht-sI7"/>
+                                    <constraint firstItem="r23-ot-iP1" firstAttribute="centerX" secondItem="OT3-d0-Bdh" secondAttribute="centerX" id="wnc-aL-Tgc"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="r23-ot-iP1" id="d0W-zc-HSH"/>

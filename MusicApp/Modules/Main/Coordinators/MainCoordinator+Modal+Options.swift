@@ -16,9 +16,9 @@ extension PlayerAnimationOptions {
     
     var duration: TimeInterval { return 0.35 }
     
-    var startAlpha: CGFloat { return 0.314 }
+    var startAlpha: CGFloat { return 0.62 }
     var endAlpha: CGFloat { return 1 }
     
-    var bottomDistance: CGFloat { return 10 }
+    var bottomDistance: CGFloat { return 0 }
     
 }

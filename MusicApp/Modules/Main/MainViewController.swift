@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     // MARK: Configuration
     
     func configure() {
-        let bottomDistance: CGFloat = 10
+        let bottomDistance: CGFloat = 0
         let center = CGPoint(
             x: view.frame.size.width / 2,
             y: view.frame.size.height - borderView.frame.size.height / 2 + bottomDistance

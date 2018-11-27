@@ -55,6 +55,8 @@ class PlayerViewController: UIViewController {
         
         bindStore()
         bindAction()
+        
+//        setupPageView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,7 +75,21 @@ class PlayerViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
+    func setupPageView() {
+        let pageVC = UIStoryboard.player.controller(of: BasePageViewController.self)
+        pageVC.orderedViewControllers = (0...20).map({ (_) -> UIViewController in
+            let controller = UIViewController()
+            controller.view.shadowed()
+            controller.view.backgroundColor = UIColor(hue: .random(in: 0...1), saturation: .random(in: 0...1), brightness: .random(in: 0.4 ... 0.7), alpha: 1)
+            return controller
+        })
+        
+        let size = UIScreen.main.bounds.width
+        let containerPageView = UIView(frame: CGRect(x: 0, y: 80, width: size, height: size))
+        view.addSubview(containerPageView)
+        addController(pageVC, in: containerPageView)
+    }
 }
 
 // MARK: Store

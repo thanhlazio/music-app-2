@@ -26,7 +26,23 @@ class InformationPlayerViewController: UIViewController {
         
         bindStore()
         bindAction()
-        customScrollView()
+//        customScrollView()
+//        setupPageView()
+    }
+    
+    func setupPageView() {
+        let pageVC = UIStoryboard.player.controller(of: BasePageViewController.self)
+        pageVC.orderedViewControllers = (0...20).map({ (_) -> UIViewController in
+            let controller = UIViewController()
+            controller.view.shadowed()
+            controller.view.backgroundColor = UIColor(hue: .random(in: 0...1), saturation: .random(in: 0...1), brightness: .random(in: 0.4 ... 0.7), alpha: 1)
+            return controller
+        })
+        
+        let size = UIScreen.main.bounds.width - 40
+        let containerPageView = UIView(frame: CGRect(x: 20, y: avatarImageView.frame.minY, width: size, height: size))
+        view.addSubview(containerPageView)
+        addController(pageVC, in: containerPageView)
     }
     
     fileprivate func customScrollView() {
@@ -45,7 +61,7 @@ class InformationPlayerViewController: UIViewController {
         let views = (1...10).map { (_) -> UIView in
             let view = UIView()
             view.backgroundColor = UIColor(hue: .random(in: 0...1), saturation: .random(in: 0...1), brightness: .random(in: 0.4...0.7), alpha: 1)
-            view.alpha = 0.85
+            view.shadowed()
             return view
         }
         
@@ -61,25 +77,25 @@ class InformationPlayerViewController: UIViewController {
         view.addSubview(scrollView)
     }
     
-    var currentOffset: CGPoint!
     var currentPage: Int?
+    var pendingIndex: Int = 0
 }
 
 extension InformationPlayerViewController: UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        currentOffset = scrollView.contentOffset
+        pendingIndex = Int(floor(scrollView.contentOffset.x / scrollView.frame.width))
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if let page = currentPage {
-            print("page \(page)")
+        if pendingIndex >= 0, let page = currentPage, pendingIndex != page {
+            print("change page from \(pendingIndex) to \(page)")
         }
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(floor(targetContentOffset.pointee.x / scrollView.frame.width))
-        if floor(targetContentOffset.pointee.x) != currentOffset.x {
+        if pendingIndex != page {
             currentPage = page
         }
     }

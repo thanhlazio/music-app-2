@@ -109,8 +109,7 @@ class MAMainSwitchCoordinator: MainSwitchCoordinator {
             }, completion: { _ in
                 secondView.removeFromSuperview()
                 subject.onCompleted()
-            }
-            )
+            })
         }
         
         // switch from right to left
@@ -137,8 +136,7 @@ class MAMainSwitchCoordinator: MainSwitchCoordinator {
             }, completion: { _ in
                 firstView.removeFromSuperview()
                 subject.onCompleted()
-            }
-            )
+            })
         }
         
         return subject.asObservable()

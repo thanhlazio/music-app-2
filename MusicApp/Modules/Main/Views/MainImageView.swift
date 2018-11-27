@@ -18,8 +18,8 @@ class MainImageView: UIView {
     
     func configure(store: MainStore, action: MainAction, center: CGPoint) {
 //        layer.cornerRadius = bounds.height / 2
-        layer.borderWidth = 0.7
-        layer.borderColor = UIColor.main.cgColor
+//        layer.borderWidth = 0.7
+//        layer.borderColor = UIColor.main.cgColor
         
         iconView.image = iconView.image?.withRenderingMode(.alwaysTemplate)
         iconView.tintColor = .white
